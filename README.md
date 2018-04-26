@@ -51,7 +51,7 @@ Called on the main/UI thread when the accelerometer changed values. The desktops
 
 ## Platform notes:
 
-Android: There is commented out code in the APP_CMD_RESUME case. Android's native glue thread handling is super wonky around app  backgrounding and it crashes saying the thread that created the view is the only one that can modify it. That commented out code was intended to re-hide the navigation bar after resuming, like it is when it first launches.
+Android: There is no java code. That might change soon because there is commented out code in the APP_CMD_RESUME case. Android's native glue thread handling is super wonky around app  backgrounding and it crashes saying the thread that created the view is the only one that can modify it. That commented out code was intended to re-hide the navigation bar after resuming, like it is when it first launches.
 
 iOS: No share groups are required and no passing of a context around between threads during initialization. No CADisplayLink and no NSTimer. There's so much misinformation out there about how to go about setting up a non main thread OpenGL setup.
 
