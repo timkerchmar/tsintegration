@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "18F8C6317534BAD265B3973FF1F9895DA963E8BD",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "B051C77CDF5CC388D546B853561C42EE73873C00" : 0,
+    "6677DCF2E89AB470A87F99F72A3A071C2EFE5DCE" : 0,
+    "18F8C6317534BAD265B3973FF1F9895DA963E8BD" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "1C239BCC-F7AB-4283-80EA-A67A84302477",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "B051C77CDF5CC388D546B853561C42EE73873C00" : "tsshared\/",
+    "6677DCF2E89AB470A87F99F72A3A071C2EFE5DCE" : "TSShared\/sort",
+    "18F8C6317534BAD265B3973FF1F9895DA963E8BD" : "Painter\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Painter",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "src\/XCode\/Painter.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/bitbucket.org\/ptymn\/Painter.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "18F8C6317534BAD265B3973FF1F9895DA963E8BD"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git:\/\/github.com\/swenson\/sort.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6677DCF2E89AB470A87F99F72A3A071C2EFE5DCE"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/bitbucket.org\/ptymn\/tsshared.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B051C77CDF5CC388D546B853561C42EE73873C00"
+    }
+  ]
+}

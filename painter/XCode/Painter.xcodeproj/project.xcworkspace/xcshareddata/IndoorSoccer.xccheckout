@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1C239BCC-F7AB-4283-80EA-A67A84302477</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>18F8C6317534BAD265B3973FF1F9895DA963E8BD</key>
+		<string>ssh://bitbucket.org/ptymn/Painter.git</string>
+		<key>6677DCF2E89AB470A87F99F72A3A071C2EFE5DCE</key>
+		<string>git://github.com/swenson/sort.git</string>
+		<key>B051C77CDF5CC388D546B853561C42EE73873C00</key>
+		<string>ssh://bitbucket.org/ptymn/tsshared.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>src/XCode/Painter.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>18F8C6317534BAD265B3973FF1F9895DA963E8BD</key>
+		<string>../../../..</string>
+		<key>6677DCF2E89AB470A87F99F72A3A071C2EFE5DCE</key>
+		<string>../../../../../TSShared/sort</string>
+		<key>B051C77CDF5CC388D546B853561C42EE73873C00</key>
+		<string>../../../../../TSShared</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://bitbucket.org/ptymn/Painter.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>18F8C6317534BAD265B3973FF1F9895DA963E8BD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>18F8C6317534BAD265B3973FF1F9895DA963E8BD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Painter</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6677DCF2E89AB470A87F99F72A3A071C2EFE5DCE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>sort</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B051C77CDF5CC388D546B853561C42EE73873C00</string>
+			<key>IDESourceControlWCCName</key>
+			<string>TSShared</string>
+		</dict>
+	</array>
+</dict>
+</plist>

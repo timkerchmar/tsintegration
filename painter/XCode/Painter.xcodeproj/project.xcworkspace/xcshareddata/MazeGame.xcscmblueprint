@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "2EDE03546AB6216D68B391FE6289E9545153ECF8",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "2EDE03546AB6216D68B391FE6289E9545153ECF8" : 9223372036854775807,
+    "B051C77CDF5CC388D546B853561C42EE73873C00" : 9223372036854775807,
+    "DFFEE6EFCA1226D3C291A9289EAB18C11C45A0F3" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "3891F48A-D2C6-43C2-858E-16462D0C3466",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "2EDE03546AB6216D68B391FE6289E9545153ECF8" : "indoorsoccer\/",
+    "B051C77CDF5CC388D546B853561C42EE73873C00" : "tsshared\/",
+    "DFFEE6EFCA1226D3C291A9289EAB18C11C45A0F3" : "RakNet\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Painter",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "src\/XCode\/Painter.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/bitbucket.org\/ptymn\/indoorsoccer.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2EDE03546AB6216D68B391FE6289E9545153ECF8"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "bitbucket.org:ptymn\/tsshared.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B051C77CDF5CC388D546B853561C42EE73873C00"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:OculusVR\/RakNet.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DFFEE6EFCA1226D3C291A9289EAB18C11C45A0F3"
+    }
+  ]
+}

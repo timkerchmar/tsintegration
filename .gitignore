@@ -1,0 +1,12 @@
+.DS_Store
+.idea
+xcuserdata/
+xcuserdatad/
+*.filters
+*.opensdf
+*.sdf
+*.suo
+*.exe
+*.ilk
+*.pdb
+Debug/

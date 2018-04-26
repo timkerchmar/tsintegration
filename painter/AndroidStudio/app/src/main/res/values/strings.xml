@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Painter</string>
+    <string name="gl2jni_activity">Painter</string>
+</resources>

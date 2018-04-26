@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		33959435158A5438008CCBF2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33959434158A5438008CCBF2 /* UIKit.framework */; };
+		33959437158A5438008CCBF2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33959436158A5438008CCBF2 /* Foundation.framework */; };
+		33959439158A5438008CCBF2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33959438158A5438008CCBF2 /* CoreGraphics.framework */; };
+		33B9A3CA158A645600280C28 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B9A3C9158A645600280C28 /* QuartzCore.framework */; };
+		33B9A3CC158A645F00280C28 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B9A3CB158A645F00280C28 /* OpenAL.framework */; };
+		33B9A3CE158A646600280C28 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B9A3CD158A646600280C28 /* OpenGLES.framework */; };
+		33B9A3D0158A647200280C28 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B9A3CF158A647200280C28 /* AudioToolbox.framework */; };
+		DB57400419DD01F40075DE8E /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB57400319DD01F40075DE8E /* Media.xcassets */; };
+		F60A09A3209231C900288725 /* Painter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F60A09A2209231C900288725 /* Painter.cpp */; };
+		F60A09A4209231C900288725 /* Painter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F60A09A2209231C900288725 /* Painter.cpp */; };
+		F60A09AA2092321E00288725 /* TSThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F60A09A72092321E00288725 /* TSThread.cpp */; };
+		F60A09AB2092321E00288725 /* TSThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F60A09A72092321E00288725 /* TSThread.cpp */; };
+		F60A09AC2092321E00288725 /* TSIntegration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F60A09A82092321E00288725 /* TSIntegration.cpp */; };
+		F60A09AD2092321E00288725 /* TSIntegration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F60A09A82092321E00288725 /* TSIntegration.cpp */; };
+		F60A09B02092322600288725 /* TSRendererView.mm in Sources */ = {isa = PBXBuildFile; fileRef = F60A09AE2092322600288725 /* TSRendererView.mm */; };
+		F60A09B12092322600288725 /* TSRendererView.mm in Sources */ = {isa = PBXBuildFile; fileRef = F60A09AE2092322600288725 /* TSRendererView.mm */; };
+		F60A09B72092324300288725 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = F60A09B42092324300288725 /* AppDelegate.mm */; };
+		F60A09B82092324300288725 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F60A09B62092324300288725 /* main.m */; };
+		F60A09BC2092324E00288725 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F60A09B92092324D00288725 /* main.m */; };
+		F60A09BD2092324E00288725 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = F60A09BB2092324E00288725 /* AppDelegate.mm */; };
+		F6336B20208CD069000DE8FC /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6336B1F208CD069000DE8FC /* Launch Screen.storyboard */; };
+		F676623120837CA900ED6583 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F676623020837CA900ED6583 /* Assets.xcassets */; };
+		F6F999FD2083A7E30011E4F7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6F999FC2083A7E30011E4F7 /* AudioToolbox.framework */; };
+		F6F99A022083A7FE0011E4F7 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6F99A002083A7FE0011E4F7 /* OpenGL.framework */; };
+		F6F99A032083A7FE0011E4F7 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6F99A012083A7FE0011E4F7 /* OpenAL.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		336A116E158A6A2A009B6ACF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33959430158A5438008CCBF2 /* PainterIOSDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PainterIOSDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		33959434158A5438008CCBF2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		33959436158A5438008CCBF2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		33959438158A5438008CCBF2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		33B9A3C9158A645600280C28 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		33B9A3CB158A645F00280C28 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		33B9A3CD158A646600280C28 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		33B9A3CF158A647200280C28 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		DB57400319DD01F40075DE8E /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		F60A09A2209231C900288725 /* Painter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Painter.cpp; path = ../Painter.cpp; sourceTree = "<group>"; };
+		F60A09A52092321E00288725 /* TSLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TSLogger.h; path = ../../lib/TSLogger.h; sourceTree = "<group>"; };
+		F60A09A62092321E00288725 /* TSThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TSThread.h; path = ../../lib/TSThread.h; sourceTree = "<group>"; };
+		F60A09A72092321E00288725 /* TSThread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TSThread.cpp; path = ../../lib/TSThread.cpp; sourceTree = "<group>"; };
+		F60A09A82092321E00288725 /* TSIntegration.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TSIntegration.cpp; path = ../../lib/TSIntegration.cpp; sourceTree = "<group>"; };
+		F60A09A92092321E00288725 /* TSIntegration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TSIntegration.h; path = ../../lib/TSIntegration.h; sourceTree = "<group>"; };
+		F60A09AE2092322600288725 /* TSRendererView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = TSRendererView.mm; path = ../../lib/apple/TSRendererView.mm; sourceTree = "<group>"; };
+		F60A09AF2092322600288725 /* TSRendererView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TSRendererView.h; path = ../../lib/apple/TSRendererView.h; sourceTree = "<group>"; };
+		F60A09B42092324300288725 /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = ../../lib/apple/ios/AppDelegate.mm; sourceTree = "<group>"; };
+		F60A09B52092324300288725 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../lib/apple/ios/AppDelegate.h; sourceTree = "<group>"; };
+		F60A09B62092324300288725 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../../lib/apple/ios/main.m; sourceTree = "<group>"; };
+		F60A09B92092324D00288725 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../../lib/apple/osx/main.m; sourceTree = "<group>"; };
+		F60A09BA2092324E00288725 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../lib/apple/osx/AppDelegate.h; sourceTree = "<group>"; };
+		F60A09BB2092324E00288725 /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = ../../lib/apple/osx/AppDelegate.mm; sourceTree = "<group>"; };
+		F6336B1F208CD069000DE8FC /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		F676622B20837CA900ED6583 /* PainterOSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PainterOSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F676623020837CA900ED6583 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F676623520837CA900ED6583 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F676623820837CA900ED6583 /* PainterOSX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PainterOSX.entitlements; sourceTree = "<group>"; };
+		F6F999FC2083A7E30011E4F7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		F6F999FE2083A7EA0011E4F7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		F6F99A002083A7FE0011E4F7 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/OpenGL.framework; sourceTree = DEVELOPER_DIR; };
+		F6F99A012083A7FE0011E4F7 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/OpenAL.framework; sourceTree = DEVELOPER_DIR; };
+		F6F99A042083A8170011E4F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3395942D158A5438008CCBF2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33B9A3CA158A645600280C28 /* QuartzCore.framework in Frameworks */,
+				33B9A3D0158A647200280C28 /* AudioToolbox.framework in Frameworks */,
+				33B9A3CE158A646600280C28 /* OpenGLES.framework in Frameworks */,
+				33B9A3CC158A645F00280C28 /* OpenAL.framework in Frameworks */,
+				33959437158A5438008CCBF2 /* Foundation.framework in Frameworks */,
+				33959435158A5438008CCBF2 /* UIKit.framework in Frameworks */,
+				33959439158A5438008CCBF2 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F676622820837CA900ED6583 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6F99A022083A7FE0011E4F7 /* OpenGL.framework in Frameworks */,
+				F6F99A032083A7FE0011E4F7 /* OpenAL.framework in Frameworks */,
+				F6F999FD2083A7E30011E4F7 /* AudioToolbox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		33959425158A5438008CCBF2 = {
+			isa = PBXGroup;
+			children = (
+				3395943A158A5438008CCBF2 /* Classes */,
+				F677E35F208A99B9009F1EB2 /* PainterIOS */,
+				F676622C20837CA900ED6583 /* PainterOSX */,
+				33959433158A5438008CCBF2 /* Frameworks */,
+				33959431158A5438008CCBF2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		33959431158A5438008CCBF2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				33959430158A5438008CCBF2 /* PainterIOSDebug.app */,
+				F676622B20837CA900ED6583 /* PainterOSX.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		33959433158A5438008CCBF2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F6F99A042083A8170011E4F7 /* Foundation.framework */,
+				F6F99A012083A7FE0011E4F7 /* OpenAL.framework */,
+				F6F99A002083A7FE0011E4F7 /* OpenGL.framework */,
+				F6F999FE2083A7EA0011E4F7 /* CoreGraphics.framework */,
+				33B9A3CF158A647200280C28 /* AudioToolbox.framework */,
+				F6F999FC2083A7E30011E4F7 /* AudioToolbox.framework */,
+				33B9A3CD158A646600280C28 /* OpenGLES.framework */,
+				33B9A3CB158A645F00280C28 /* OpenAL.framework */,
+				33B9A3C9158A645600280C28 /* QuartzCore.framework */,
+				33959434158A5438008CCBF2 /* UIKit.framework */,
+				33959436158A5438008CCBF2 /* Foundation.framework */,
+				33959438158A5438008CCBF2 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3395943A158A5438008CCBF2 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F60A09B32092323700288725 /* iOS */,
+				F60A09B22092323100288725 /* OSX */,
+				F60A09A2209231C900288725 /* Painter.cpp */,
+				F60A09A82092321E00288725 /* TSIntegration.cpp */,
+				F60A09A92092321E00288725 /* TSIntegration.h */,
+				F60A09A52092321E00288725 /* TSLogger.h */,
+				F60A09A72092321E00288725 /* TSThread.cpp */,
+				F60A09A62092321E00288725 /* TSThread.h */,
+				F60A09AF2092322600288725 /* TSRendererView.h */,
+				F60A09AE2092322600288725 /* TSRendererView.mm */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		F60A09B22092323100288725 /* OSX */ = {
+			isa = PBXGroup;
+			children = (
+				F60A09BA2092324E00288725 /* AppDelegate.h */,
+				F60A09BB2092324E00288725 /* AppDelegate.mm */,
+				F60A09B92092324D00288725 /* main.m */,
+			);
+			name = OSX;
+			sourceTree = "<group>";
+		};
+		F60A09B32092323700288725 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				F60A09B52092324300288725 /* AppDelegate.h */,
+				F60A09B42092324300288725 /* AppDelegate.mm */,
+				F60A09B62092324300288725 /* main.m */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		F676622C20837CA900ED6583 /* PainterOSX */ = {
+			isa = PBXGroup;
+			children = (
+				F676623020837CA900ED6583 /* Assets.xcassets */,
+				F676623520837CA900ED6583 /* Info.plist */,
+				F676623820837CA900ED6583 /* PainterOSX.entitlements */,
+			);
+			path = PainterOSX;
+			sourceTree = "<group>";
+		};
+		F677E35F208A99B9009F1EB2 /* PainterIOS */ = {
+			isa = PBXGroup;
+			children = (
+				336A116E158A6A2A009B6ACF /* Info.plist */,
+				DB57400319DD01F40075DE8E /* Media.xcassets */,
+				F6336B1F208CD069000DE8FC /* Launch Screen.storyboard */,
+			);
+			path = PainterIOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3395942F158A5438008CCBF2 /* PainterIOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33959448158A5438008CCBF2 /* Build configuration list for PBXNativeTarget "PainterIOS" */;
+			buildPhases = (
+				3395942C158A5438008CCBF2 /* Sources */,
+				3395942D158A5438008CCBF2 /* Frameworks */,
+				3395942E158A5438008CCBF2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PainterIOS;
+			productName = Painter;
+			productReference = 33959430158A5438008CCBF2 /* PainterIOSDebug.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F676622A20837CA900ED6583 /* PainterOSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F676623B20837CA900ED6583 /* Build configuration list for PBXNativeTarget "PainterOSX" */;
+			buildPhases = (
+				F676622720837CA900ED6583 /* Sources */,
+				F676622820837CA900ED6583 /* Frameworks */,
+				F676622920837CA900ED6583 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PainterOSX;
+			productName = PainterOSX;
+			productReference = F676622B20837CA900ED6583 /* PainterOSX.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		33959427158A5438008CCBF2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				TargetAttributes = {
+					3395942F158A5438008CCBF2 = {
+						DevelopmentTeam = UPWYP35G39;
+						ProvisioningStyle = Automatic;
+					};
+					F676622A20837CA900ED6583 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 3395942A158A5438008CCBF2 /* Build configuration list for PBXProject "Painter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 33959425158A5438008CCBF2;
+			productRefGroup = 33959431158A5438008CCBF2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3395942F158A5438008CCBF2 /* PainterIOS */,
+				F676622A20837CA900ED6583 /* PainterOSX */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3395942E158A5438008CCBF2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6336B20208CD069000DE8FC /* Launch Screen.storyboard in Resources */,
+				DB57400419DD01F40075DE8E /* Media.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F676622920837CA900ED6583 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F676623120837CA900ED6583 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3395942C158A5438008CCBF2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F60A09AC2092321E00288725 /* TSIntegration.cpp in Sources */,
+				F60A09AA2092321E00288725 /* TSThread.cpp in Sources */,
+				F60A09B02092322600288725 /* TSRendererView.mm in Sources */,
+				F60A09B72092324300288725 /* AppDelegate.mm in Sources */,
+				F60A09B82092324300288725 /* main.m in Sources */,
+				F60A09A3209231C900288725 /* Painter.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F676622720837CA900ED6583 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F60A09BC2092324E00288725 /* main.m in Sources */,
+				F60A09AD2092321E00288725 /* TSIntegration.cpp in Sources */,
+				F60A09AB2092321E00288725 /* TSThread.cpp in Sources */,
+				F60A09B12092322600288725 /* TSRendererView.mm in Sources */,
+				F60A09BD2092324E00288725 /* AppDelegate.mm in Sources */,
+				F60A09A4209231C900288725 /* Painter.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		33959446158A5438008CCBF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = ../../../tsshared/cpp/TSPrecompiled.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../../../TSShared,
+					../../../TSShared/box2dcpp/Box2D,
+					../../../TSShared/glm,
+					../../../TSShared/glgeom,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = "-Wno-address-of-temporary";
+				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
+				STRIP_INSTALLED_PRODUCT = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
+				VALID_ARCHS = armv7;
+			};
+			name = Debug;
+		};
+		33959447158A5438008CCBF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = ../../../tsshared/cpp/TSPrecompiled.pch;
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = NDEBUG;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../../../TSShared,
+					../../../TSShared/box2dcpp/Box2D,
+					../../../TSShared/glm,
+					../../../TSShared/glgeom,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-Wno-address-of-temporary";
+				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = armv7;
+			};
+			name = Release;
+		};
+		33959449158A5438008CCBF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = UPWYP35G39;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_VERSION = "";
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = PainterIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.klaxon.Painter;
+				PRODUCT_NAME = "$(TARGET_NAME)Debug";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				VALID_ARCHS = "i386 x86_64 arm64";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3395944A158A5438008CCBF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = UPWYP35G39;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_VERSION = "";
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = PainterIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.klaxon.Painter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				STRIP_INSTALLED_PRODUCT = YES;
+				VALID_ARCHS = "i386 x86_64 arm64";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		F676623920837CA900ED6583 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = PainterOSX/PainterOSX.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = PainterOSX/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = klaxon.PainterOSX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				VALID_ARCHS = "x86_64 i386";
+			};
+			name = Debug;
+		};
+		F676623A20837CA900ED6583 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = PainterOSX/PainterOSX.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = PainterOSX/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = klaxon.PainterOSX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				VALID_ARCHS = "x86_64 i386";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3395942A158A5438008CCBF2 /* Build configuration list for PBXProject "Painter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33959446158A5438008CCBF2 /* Debug */,
+				33959447158A5438008CCBF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33959448158A5438008CCBF2 /* Build configuration list for PBXNativeTarget "PainterIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33959449158A5438008CCBF2 /* Debug */,
+				3395944A158A5438008CCBF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F676623B20837CA900ED6583 /* Build configuration list for PBXNativeTarget "PainterOSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F676623920837CA900ED6583 /* Debug */,
+				F676623A20837CA900ED6583 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 33959427158A5438008CCBF2 /* Project object */;
+}
