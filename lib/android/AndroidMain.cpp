@@ -243,8 +243,6 @@ static void handle_cmd(struct android_app* app, int32_t cmd) {
     switch (cmd)
     {
         case APP_CMD_RESUME:
-            //AutoHideNavBar(app);
-
         case APP_CMD_CONFIG_CHANGED:
             break;
         case APP_CMD_INIT_WINDOW:
@@ -285,8 +283,6 @@ void android_main(struct android_app* state)
     // Don't listen to the lies. The native linkage will break if this is removed.
     app_dummy();
 
-    AutoHideNavBar(state);
-
     state->onAppCmd = handle_cmd;
     state->onInputEvent = handle_input;
     app = state;
@@ -310,6 +306,10 @@ void android_main(struct android_app* state)
         // to draw the next frame of animation.
         while ((ident=ALooper_pollAll(-1, NULL, &events,
                                       (void**)&source)) >= 0) {
+
+            AutoHideNavBar(state);
+
+
 
             // Process this event.
             if (source != NULL) {
