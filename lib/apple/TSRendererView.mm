@@ -5,7 +5,6 @@
 
 extern int clientViewWidth;
 extern int clientViewHeight;
-int touchIndex = 0;
 #endif
 
 #import "TSRendererView.h"
@@ -17,25 +16,31 @@ int touchIndex = 0;
 - (void)mouseDown:(NSEvent *)event
 {
     NSPoint eventLocation = [self convertPoint:[event locationInWindow] fromView:nil];
-    TSTouchAdded(eventLocation.x, clientViewHeight - eventLocation.y, ++touchIndex);
+    TSTouchAdded(eventLocation.x, clientViewHeight - eventLocation.y, 0);
 }
 
 - (void)mouseUp:(NSEvent *)event
 {
     NSPoint eventLocation = [self convertPoint:[event locationInWindow] fromView:nil];
-    TSTouchRemoved(eventLocation.x, clientViewHeight - eventLocation.y, touchIndex);
+    TSTouchRemoved(eventLocation.x, clientViewHeight - eventLocation.y, 0);
+}
+
+- (void)mouseMoved:(NSEvent *)event
+{
+    NSPoint eventLocation = [self convertPoint:[event locationInWindow] fromView:nil];
+    TSTouchMoved(eventLocation.x, clientViewHeight - eventLocation.y, 0);
 }
 
 - (void)mouseDragged:(NSEvent *)event
 {
     NSPoint eventLocation = [self convertPoint:[event locationInWindow] fromView:nil];
-    TSTouchMoved(eventLocation.x, clientViewHeight - eventLocation.y, touchIndex);
+    TSTouchMoved(eventLocation.x, clientViewHeight - eventLocation.y, 0);
 }
 
 - (void)mouseExited:(NSEvent *)event
 {
     NSPoint eventLocation = [self convertPoint:[event locationInWindow] fromView:nil];
-    TSTouchRemoved(eventLocation.x, clientViewHeight - eventLocation.y, touchIndex);
+    TSTouchRemoved(eventLocation.x, clientViewHeight - eventLocation.y, 0);
 }
 
 #else
