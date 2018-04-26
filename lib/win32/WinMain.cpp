@@ -1,12 +1,5 @@
 #include <windowsx.h>
-#include "TSTouch.h"
-#include "TSRenderer.h"
-#include "TSFile.h"
-#include "Game.h"
-#include "TSCache.h"
-#include "TSTextureCache.h"
 #include "TSIntegration.h"
-#include "TSSequence.h"
 #include "TSThread.h"
 
 HGLRC hRC;				/* opengl context */
@@ -43,7 +36,7 @@ void TSIntegration::createWindow()
 
 	int width = 1900, height = 580;
 
-	hWnd = CreateWindow(L"OpenGL", L"Mazegame (1900, 580)",
+	hWnd = CreateWindow(L"OpenGL", L"TSIntegration",
 		WS_OVERLAPPEDWINDOW, 0, 0, width, height, NULL, NULL, hInstance, NULL);
 	if (hWnd == NULL) {
 		MessageBox(NULL, L"CreateWindow() failed:  Cannot create a window.",
@@ -180,13 +173,6 @@ WindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	{
 		TSIntegration::start();
 
-		TSInt32 backBufferWidth, backBufferHeight;
-		TSRenderer::displayDimensions(backBufferWidth, backBufferHeight);
-
-		char newTitle[1024];
-		sprintf(newTitle, "%i, %i", backBufferWidth, backBufferHeight);
-		SetWindowTextA(hWnd, newTitle);
-
 		return 0;
 	}
 
@@ -208,28 +194,20 @@ WindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 
 		short x = GET_X_LPARAM(lParam);
 		short y = GET_Y_LPARAM(lParam);
-
-		TSInt32 backBufferWidth, backBufferHeight;
-		TSRenderer::displayDimensions(backBufferWidth, backBufferHeight);
-		TSTouch::mouseDown(x, y, backBufferWidth, backBufferHeight);
+		TSTouchAdded(x, y, 0);
 	}
 	return 0;
 
 	case WM_LBUTTONUP:
 	{
-		TSInt32 backBufferWidth, backBufferHeight;
-		TSRenderer::displayDimensions(backBufferWidth, backBufferHeight);
-		TSTouch::mouseUp(backBufferWidth, backBufferHeight);
+		short x = LOWORD(lParam);
+		short y = HIWORD(lParam);
+		TSTouchRemoved(x, y, 0);
 	}
 		return 0;
 
 	case WM_MOUSEMOVE:
 	{
-		TSInt32 backBufferWidth, backBufferHeight;
-		printf("main thread getting display dimensions\n");
-		TSRenderer::displayDimensions(backBufferWidth, backBufferHeight);
-		printf("main thread got display dimensions\n");
-
 		short x = LOWORD(lParam);
 		short y = HIWORD(lParam);
 
@@ -240,20 +218,17 @@ WindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 			y < clientRect.top || y >= clientRect.bottom) {
 
 			if (GetCapture() == hWnd) ReleaseCapture();
-			TSTouch::mouseLeave(backBufferWidth, backBufferHeight);
+			TSTouchRemoved(x, y, 0);
 		}
 		else {
 			if (GetCapture() != hWnd) SetCapture(hWnd);
-			TSTouch::mouseMove(x, y, backBufferWidth, backBufferHeight);
+			TSTouchMoved(x, y, 0);
 		}
 	}
 	return 0;
 
 	case WM_MOUSEWHEEL:
 	{
-		TSInt32 backBufferWidth, backBufferHeight;
-		TSRenderer::displayDimensions(backBufferWidth, backBufferHeight);
-
 		short x = LOWORD(lParam);
 		short y = HIWORD(lParam);
 
@@ -264,7 +239,7 @@ WindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 			y < clientRect.top || y >= clientRect.bottom)
 		{
 			if (GetCapture() == hWnd) ReleaseCapture();
-			TSTouch::mouseLeave(backBufferWidth, backBufferHeight);
+			TSTouchRemoved(x, y, 0);
 		}
 		else
 		{
@@ -277,7 +252,7 @@ WindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	case WM_CLOSE:
 		timeEndPeriod(3); // Must contain same arg as timeBeginPeriod and must be called immediately when high resolution is no longer necessary.
 
-		TSIntegration::shutDown();
+		TSIntegration::stop();
 
 		ReleaseDC(hWnd, hDC);
 		wglDeleteContext(hRC);
@@ -297,7 +272,7 @@ int APIENTRY
 WinMain(HINSTANCE hCurrentInst, HINSTANCE hPreviousInst,
 	LPSTR lpszCmdLine, int nCmdShow)
 {
-	TSIntegration::initialize("../../../deploy", ".");
+	TSIntegration::initialize();
 	
 	// Resize window so that client area width, height. 
 	// Without this code, I see 1018, 740 instead of 1024, 768
@@ -316,63 +291,17 @@ WinMain(HINSTANCE hCurrentInst, HINSTANCE hPreviousInst,
 	SetThreadPriority(GetCurrentThread(), THREAD_PRIORITY_TIME_CRITICAL);
 	timeBeginPeriod(3); 
 
-	TSFloat lastFrameTime = TSIntegration::now;
 	MSG   msg;
-	//for (;;)
-	//{
-		while (GetMessage(&msg, NULL, 0, 0) > 0) { //PeekMessage(&msg, 0, 0, 0, PM_REMOVE)) {
-			if (msg.message == WM_QUIT) break;
+	while (GetMessage(&msg, NULL, 0, 0) > 0) 
+	{
+		if (msg.message == WM_QUIT) break;
 
 
-			TranslateMessage(&msg);
+		TranslateMessage(&msg);
 
 
-			DispatchMessage(&msg);
-		}
-
-//		TSFloat intervalSinceLastFrame = TSIntegration::now - lastFrameTime;
-//		lastFrameTime = TSIntegration::now;
-//
-//		if(GetForegroundWindow() == hWnd)
-//		{
-//			TSInt16 pressedLeft = GetAsyncKeyState('A') & 0x8000;
-//			TSInt16 pressedRight = GetAsyncKeyState('D') & 0x8000;
-//			TSInt16 pressedUp =    GetAsyncKeyState('W') & 0x8000;
-//			TSInt16 pressedDown =  GetAsyncKeyState('S') & 0x8000;
-//
-//			TSInt16 pressedLeftAlternative =  GetAsyncKeyState(VK_LEFT)		& 0x8000;
-//			TSInt16 pressedRightAlternative = GetAsyncKeyState(VK_RIGHT)	& 0x8000;
-//			TSInt16 pressedUpAlternative =    GetAsyncKeyState(VK_UP)		& 0x8000;
-//			TSInt16 pressedDownAlternative =  GetAsyncKeyState(VK_DOWN)		& 0x8000;
-//
-//			Game* game = Game::getInstance();
-//			const TSFloat panScale = 600.0 * intervalSinceLastFrame / (1.0 - game->cameraPosition.z);
-//			if(pressedLeftAlternative) game->cameraPosition.x -= panScale;
-//			if(pressedRightAlternative) game->cameraPosition.x += panScale;
-//			if(pressedUpAlternative) game->cameraPosition.y -= panScale;
-//			if(pressedDownAlternative) game->cameraPosition.y += panScale;
-//
-//			// WASD Accelermeter support
-//			static TSVec2 accelerometer(0.0, 0.0);
-//
-//			double x = pressedLeft ? -1.0 : 0.0;
-//			double y = pressedUp ? -1.0 : 0.0;
-//
-//			if(pressedRight) x += 1.0;
-//			if(pressedDown) y += 1.0;
-//
-//			accelerometer.x += x * intervalSinceLastFrame;
-//			accelerometer.y += y * intervalSinceLastFrame;
-//
-//			accelerometer.x = TSClamp(accelerometer.x, -1.0f, 1.0f);
-//			accelerometer.y = TSClamp(accelerometer.y, -1.0f, 1.0f);
-//
-//			TSTouch::setAccelerometer(-accelerometer.y, accelerometer.x, 0.0);
-//		}
-//
-////		TSIntegration::update();
-//    }
-
+		DispatchMessage(&msg);
+	}
 
     return msg.wParam;
 }
