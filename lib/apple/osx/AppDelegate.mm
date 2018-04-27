@@ -4,12 +4,7 @@
 #include "TSThread.h"
 #import "TSRendererView.h"
 
-#if TARGET_OS_OSX
-NSOpenGLContext*
-#else
-EAGLContext *
-#endif
-    context = nil;
+NSOpenGLContext* context = nil;
 
 NSWindow *window = nil;
 
