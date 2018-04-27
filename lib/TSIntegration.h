@@ -48,20 +48,20 @@ class TSIntegration
 {
 public:
     // Platform integration calls these
-	static void initialize();
+    static void initialize();
     static void start();
     static void stop();
 
-	// Platform implements these
-	static void createWindow(); // main thread should prepare an OpenGL compatible surface
-	static void setPixelFormat(); // rendering thread should prepare an OpenGL compatible surface
+    // Platform implements these
+    static void createWindow(); // main thread should prepare an OpenGL compatible surface
+    static void setPixelFormat(); // rendering thread should prepare an OpenGL compatible surface
     static void createContext(); // rendering thread should prepare an OpenGL context
     static void makeContextCurrent(); // make OpenGL context current to rendering thread
     static void clearContext(); // disable OpenGL context on rendering thread
     static void enableDisplay(); // rendering thread callback each time a new valid display size is known
     static void disableDisplay(); // rendering thread callback for disabled display
-	static void displaySize(int& width, int& height); // rendering thread callback to access display dimensions
-	static void pageFlip(); // rendering thread pageFlip callback
+    static void displaySize(int& width, int& height); // rendering thread callback to access display dimensions
+    static void pageFlip(); // rendering thread pageFlip callback
     static void setSwapInterval(); // rendering thread should set a pageFlip interval
 };
 
