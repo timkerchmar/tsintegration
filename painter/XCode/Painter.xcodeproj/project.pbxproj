@@ -7,14 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		33959435158A5438008CCBF2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33959434158A5438008CCBF2 /* UIKit.framework */; };
 		33959437158A5438008CCBF2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33959436158A5438008CCBF2 /* Foundation.framework */; };
-		33959439158A5438008CCBF2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33959438158A5438008CCBF2 /* CoreGraphics.framework */; };
-		33B9A3CA158A645600280C28 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B9A3C9158A645600280C28 /* QuartzCore.framework */; };
-		33B9A3CC158A645F00280C28 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B9A3CB158A645F00280C28 /* OpenAL.framework */; };
 		33B9A3CE158A646600280C28 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B9A3CD158A646600280C28 /* OpenGLES.framework */; };
-		33B9A3D0158A647200280C28 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B9A3CF158A647200280C28 /* AudioToolbox.framework */; };
-		DB57400419DD01F40075DE8E /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB57400319DD01F40075DE8E /* Media.xcassets */; };
 		F60A09A3209231C900288725 /* Painter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F60A09A2209231C900288725 /* Painter.cpp */; };
 		F60A09A4209231C900288725 /* Painter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F60A09A2209231C900288725 /* Painter.cpp */; };
 		F60A09AA2092321E00288725 /* TSThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F60A09A72092321E00288725 /* TSThread.cpp */; };
@@ -28,10 +22,9 @@
 		F60A09BC2092324E00288725 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F60A09B92092324D00288725 /* main.m */; };
 		F60A09BD2092324E00288725 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = F60A09BB2092324E00288725 /* AppDelegate.mm */; };
 		F6336B20208CD069000DE8FC /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6336B1F208CD069000DE8FC /* Launch Screen.storyboard */; };
-		F676623120837CA900ED6583 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F676623020837CA900ED6583 /* Assets.xcassets */; };
-		F6F999FD2083A7E30011E4F7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6F999FC2083A7E30011E4F7 /* AudioToolbox.framework */; };
+		F63C8E0E2092BA6C00FE77C2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B9A3C9158A645600280C28 /* QuartzCore.framework */; };
+		F63C8E0F2092BA9000FE77C2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33959434158A5438008CCBF2 /* UIKit.framework */; };
 		F6F99A022083A7FE0011E4F7 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6F99A002083A7FE0011E4F7 /* OpenGL.framework */; };
-		F6F99A032083A7FE0011E4F7 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6F99A012083A7FE0011E4F7 /* OpenAL.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +37,6 @@
 		33B9A3CB158A645F00280C28 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		33B9A3CD158A646600280C28 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		33B9A3CF158A647200280C28 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		DB57400319DD01F40075DE8E /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		F60A09A2209231C900288725 /* Painter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Painter.cpp; path = ../Painter.cpp; sourceTree = "<group>"; };
 		F60A09A52092321E00288725 /* TSLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TSLogger.h; path = ../../lib/TSLogger.h; sourceTree = "<group>"; };
 		F60A09A62092321E00288725 /* TSThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TSThread.h; path = ../../lib/TSThread.h; sourceTree = "<group>"; };
@@ -61,7 +53,6 @@
 		F60A09BB2092324E00288725 /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = ../../lib/apple/osx/AppDelegate.mm; sourceTree = "<group>"; };
 		F6336B1F208CD069000DE8FC /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		F676622B20837CA900ED6583 /* PainterOSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PainterOSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F676623020837CA900ED6583 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F676623520837CA900ED6583 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F676623820837CA900ED6583 /* PainterOSX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PainterOSX.entitlements; sourceTree = "<group>"; };
 		F6F999FC2083A7E30011E4F7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
@@ -76,13 +67,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33B9A3CA158A645600280C28 /* QuartzCore.framework in Frameworks */,
-				33B9A3D0158A647200280C28 /* AudioToolbox.framework in Frameworks */,
+				F63C8E0F2092BA9000FE77C2 /* UIKit.framework in Frameworks */,
+				F63C8E0E2092BA6C00FE77C2 /* QuartzCore.framework in Frameworks */,
 				33B9A3CE158A646600280C28 /* OpenGLES.framework in Frameworks */,
-				33B9A3CC158A645F00280C28 /* OpenAL.framework in Frameworks */,
 				33959437158A5438008CCBF2 /* Foundation.framework in Frameworks */,
-				33959435158A5438008CCBF2 /* UIKit.framework in Frameworks */,
-				33959439158A5438008CCBF2 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,8 +79,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6F99A022083A7FE0011E4F7 /* OpenGL.framework in Frameworks */,
-				F6F99A032083A7FE0011E4F7 /* OpenAL.framework in Frameworks */,
-				F6F999FD2083A7E30011E4F7 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,7 +164,6 @@
 		F676622C20837CA900ED6583 /* PainterOSX */ = {
 			isa = PBXGroup;
 			children = (
-				F676623020837CA900ED6583 /* Assets.xcassets */,
 				F676623520837CA900ED6583 /* Info.plist */,
 				F676623820837CA900ED6583 /* PainterOSX.entitlements */,
 			);
@@ -189,7 +174,6 @@
 			isa = PBXGroup;
 			children = (
 				336A116E158A6A2A009B6ACF /* Info.plist */,
-				DB57400319DD01F40075DE8E /* Media.xcassets */,
 				F6336B1F208CD069000DE8FC /* Launch Screen.storyboard */,
 			);
 			path = PainterIOS;
@@ -280,7 +264,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6336B20208CD069000DE8FC /* Launch Screen.storyboard in Resources */,
-				DB57400419DD01F40075DE8E /* Media.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +271,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F676623120837CA900ED6583 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
