@@ -124,55 +124,6 @@ void TSIntegration::pageFlip()
     eglSwapBuffers(display, surface);
 }
 
-int api_version( struct android_app *app ) {
-
-    JNIEnv* env;
-    app->activity->vm->AttachCurrentThread( &env, NULL );
-
-    // VERSION is a nested class within android.os.Build (hence "$" rather than "/")
-    jclass versionClass = env->FindClass("android/os/Build$VERSION" );
-    jfieldID sdkIntFieldID = env->GetStaticFieldID(versionClass, "SDK_INT", "I" );
-
-    int sdkInt = env->GetStaticIntField(versionClass, sdkIntFieldID );
-    app->activity->vm->DetachCurrentThread();
-    return sdkInt;
-}
-
-void AutoHideNavBar(struct android_app* state)
-{
-    if (api_version(state) < 19) return;
-
-    JNIEnv* env;
-    state->activity->vm->AttachCurrentThread(&env, NULL);
-
-    jclass activityClass = env->FindClass("android/app/NativeActivity");
-    jmethodID getWindow = env->GetMethodID(activityClass, "getWindow", "()Landroid/view/Window;");
-
-    jclass windowClass = env->FindClass("android/view/Window");
-    jmethodID getDecorView = env->GetMethodID(windowClass, "getDecorView", "()Landroid/view/View;");
-
-    jclass viewClass = env->FindClass("android/view/View");
-    jmethodID setSystemUiVisibility = env->GetMethodID(viewClass, "setSystemUiVisibility", "(I)V");
-
-    jobject window = env->CallObjectMethod(state->activity->clazz, getWindow);
-
-    jobject decorView = env->CallObjectMethod(window, getDecorView);
-
-    jfieldID flagFullscreenID = env->GetStaticFieldID(viewClass, "SYSTEM_UI_FLAG_FULLSCREEN", "I");
-    jfieldID flagHideNavigationID = env->GetStaticFieldID(viewClass, "SYSTEM_UI_FLAG_HIDE_NAVIGATION", "I");
-    jfieldID flagImmersiveID = env->GetStaticFieldID(viewClass, "SYSTEM_UI_FLAG_IMMERSIVE_STICKY", "I");
-
-    int flagFullscreen = env->GetStaticIntField(viewClass, flagFullscreenID);
-    int flagHideNavigation = env->GetStaticIntField(viewClass, flagHideNavigationID);
-    int flagImmersive = env->GetStaticIntField(viewClass, flagImmersiveID);
-
-    int flag = flagFullscreen | flagHideNavigation | flagImmersive;
-
-    env->CallVoidMethod(decorView, setSystemUiVisibility, flag);
-
-    state->activity->vm->DetachCurrentThread();
-}
-
 //=====================================================================================
 // PLATFORM EVENT SCAFFOLDING
 //=====================================================================================
@@ -304,21 +255,19 @@ void android_main(struct android_app* state)
         // If not animating, we will block forever waiting for events.
         // If animating, we loop until all events are read, then continue
         // to draw the next frame of animation.
-        while ((ident=ALooper_pollAll(-1, NULL, &events,
-                                      (void**)&source)) >= 0) {
-
-            AutoHideNavBar(state);
-
-
-
+        while ((ident=ALooper_pollAll(-1, NULL, &events, (void**)&source)) >= 0)
+        {
             // Process this event.
-            if (source != NULL) {
+            if (source != NULL)
+            {
                 source->process(state, source);
             }
 
             // If a sensor has data, process it now.
-            if (ident == LOOPER_ID_USER) {
-                if (gyroscopicSensor != NULL) {
+            if (ident == LOOPER_ID_USER)
+            {
+                if (gyroscopicSensor != NULL)
+                {
                     ASensorEvent event;
                     while (ASensorEventQueue_getEvents(sensorEventQueue,
                                                        &event, 1) > 0) {
