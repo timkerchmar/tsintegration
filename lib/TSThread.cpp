@@ -11,7 +11,7 @@ TSMutex::TSMutex()
 #ifdef WIN32
     InitializeCriticalSection(&handle);
 #else
-    handle = PTHREAD_MUTEX_INITIALIZER;
+    pthread_mutex_init ( &handle, NULL);
 #endif
 }
 
@@ -37,7 +37,7 @@ TSConditionVariable::TSConditionVariable()
 #ifdef WIN32
     InitializeConditionVariable(&handle);
 #else
-    handle = PTHREAD_COND_INITIALIZER;
+    pthread_cond_init ( &handle, NULL );
 #endif
 }
 
@@ -68,7 +68,7 @@ TSThreadMethod(void* threadObject)
 {
     TSThread *thread = (TSThread *)threadObject;
     
-#ifndef WIN32
+#if !defined(WIN32) && !defined(__EMSCRIPTEN__)
     pthread_setname_np(
 #ifdef ANDROID
                        thread->handle,

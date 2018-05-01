@@ -32,6 +32,10 @@ void TSAccelerometerChanged(float x, float y, float z);
 #include <OpenGL/glu.h>
 #include <OpenGL/glext.h>
 
+#elif __EMSCRIPTEN__
+
+#include <GLES3/gl3.h>
+
 #else
 #include <OpenGLES/ES1/gl.h>
 #include <OpenGLES/ES1/glext.h>

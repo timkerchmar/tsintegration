@@ -1,0 +1,1 @@
+em++ ../Painter.cpp ../../lib/TSIntegration.cpp ../../lib/TSThread.cpp ../../lib/emscripten/main.cpp -I../../lib -s FULL_ES3=1 -s USE_PTHREADS=2 -s WASM=1 --emrun -c
