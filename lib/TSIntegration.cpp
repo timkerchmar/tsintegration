@@ -6,10 +6,11 @@
 #include <string>
 
 GLint internalBackBufferWidth = 0;
-GLint internalBackBufferHeight = -1;
+GLint internalBackBufferHeight = 0;
 
 TSConditionVariable renderCommandReady;
 TSConditionVariable rendererPaused;
+TSMutex mutex;
 
 enum TSRendererCommand
 {
@@ -21,7 +22,7 @@ enum TSRendererCommand
 class TSRenderer : public TSThread {
 public:
     TSRendererCommand command;
-    TSMutex mutex;
+    bool destroyRequested;
 
     std::string name()
     {
@@ -30,22 +31,31 @@ public:
 
     void run()
     {
+        destroyRequested = false;
         mutex.lock();
 
         TSIntegration::setPixelFormat();
         TSIntegration::createContext();
         TSIntegration::makeContextCurrent();
 
-        TSInitialized();
+        static bool firstTime = true;
+        if (firstTime)
+        {
+            firstTime = false;
+            TSInitialized();
+        }
 
         printf("initialized\n");
 
-        for (;;) {
-            switch (command) {
+        while (!destroyRequested) 
+        {
+            switch (command) 
+            {
                 case TSRENDERER_RECONFIGURE:
                     printf("TSRENDERER_RECONFIGURE: began\n");
 
-                    if (!internalBackBufferWidth || !internalBackBufferHeight) {
+                    if (!internalBackBufferWidth || !internalBackBufferHeight) 
+                    {
                         TSIntegration::enableDisplay();
                         TSIntegration::setSwapInterval();
                     }
@@ -67,7 +77,9 @@ public:
                         mutex.unlock();
                         TSIntegration::pageFlip();
                         mutex.lock();
-                    } else {
+                    } 
+                    else 
+                    {
                         renderCommandReady.wait(mutex);
                     }
 
@@ -81,37 +93,52 @@ public:
                     break;
             }
         }
+        
+        mutex.unlock();
+
+        delete this;
     }
 };
 
-TSRenderer renderer;
+TSRenderer* renderer = NULL;
 
 void TSIntegration::initialize()
 {
     TSIntegration::createWindow();
-
-    if (internalBackBufferHeight < 0)
-    {
-        internalBackBufferHeight = 0;
-        TSRedirectStandardOutput();
-        renderer.command = TSRENDERER_IDLE;
-        renderer.start();
-    }
+    TSRedirectStandardOutput();
+    renderer = new TSRenderer();
+    renderer->command = TSRENDERER_IDLE;
+    renderer->start();
 }
 
 void TSIntegration::start()
 {
-    renderer.mutex.lock();
-    renderer.command = TSRENDERER_RECONFIGURE;
+    mutex.lock();
+    renderer->command = TSRENDERER_RECONFIGURE;
     renderCommandReady.notify();
-    renderer.mutex.unlock();
+    mutex.unlock();
 }
 
 void TSIntegration::stop()
 {
-    renderer.mutex.lock();
-    renderer.command = TSRENDERER_PAUSE;
+    if (renderer)
+    {
+        mutex.lock();
+        renderer->command = TSRENDERER_PAUSE;
+        renderCommandReady.notify();
+        rendererPaused.wait(mutex);
+        mutex.unlock();
+    }
+}
+
+void TSIntegration::shutDown()
+{
+    stop();
+
+    mutex.lock();
+    renderer->destroyRequested = true;
     renderCommandReady.notify();
-    rendererPaused.wait(renderer.mutex);
-    renderer.mutex.unlock();
+    mutex.unlock();
+    renderer = NULL;
+
 }

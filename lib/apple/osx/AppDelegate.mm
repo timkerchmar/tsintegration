@@ -100,7 +100,7 @@ void TSIntegration::pageFlip()
 
 - (void)windowWillClose:(NSNotification *)notification
 {
-    TSIntegration::stop();
+    TSIntegration::shutDown();
 }
 
 - (void)windowDidResize:(NSNotification *)notification

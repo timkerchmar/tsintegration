@@ -252,7 +252,7 @@ WindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	case WM_CLOSE:
 		timeEndPeriod(3); // Must contain same arg as timeBeginPeriod and must be called immediately when high resolution is no longer necessary.
 
-		TSIntegration::stop();
+		TSIntegration::shutDown();
 
 		ReleaseDC(hWnd, hDC);
 		wglDeleteContext(hRC);

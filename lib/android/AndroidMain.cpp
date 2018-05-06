@@ -188,20 +188,37 @@ static int32_t handle_input(struct android_app* app, AInputEvent* event) {
 /**
  * Process the next main command.
  */
-static void handle_cmd(struct android_app* app, int32_t cmd) {
+static void handle_cmd(struct android_app* app, int32_t cmd) 
+{
+    static bool hasBeenInitialized = false;
+    
     printf("got command %i\n", cmd);
 
     switch (cmd)
     {
+        case APP_CMD_STOP:
+        case APP_CMD_PAUSE:
+            TSIntegration::stop();
+            break;
         case APP_CMD_RESUME:
+            if (hasBeenInitialized)
+            {
+                TSIntegration::start();
+            }
+            break;
         case APP_CMD_CONFIG_CHANGED:
             break;
         case APP_CMD_INIT_WINDOW:
-            TSIntegration::initialize();
+            if (!hasBeenInitialized) 
+            {
+                TSIntegration::initialize();
+                hasBeenInitialized = true;
+            }
             TSIntegration::start();
             break;
         case APP_CMD_TERM_WINDOW:
-            TSIntegration::stop();
+            hasBeenInitialized = false;
+            TSIntegration::shutDown();
             break;
 
         case APP_CMD_GAINED_FOCUS:

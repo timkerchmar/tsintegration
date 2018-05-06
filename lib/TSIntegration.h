@@ -51,6 +51,7 @@ public:
     static void initialize();
     static void start();
     static void stop();
+    static void shutDown();
 
     // Platform implements these
     static void createWindow(); // main thread should prepare an OpenGL compatible surface

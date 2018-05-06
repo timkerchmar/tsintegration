@@ -51,10 +51,6 @@ Called on the main/UI thread when the accelerometer changed values. The desktops
 
 ## Platform notes:
 
-Android: Background threads should be destroyed and recreated when the window is lost and recreated, but currently aren't yet.
-
-iOS: No share groups are required and no passing of a context around between threads during initialization. No CADisplayLink and no NSTimer. There's so much misinformation out there about how to go about setting up a non main thread OpenGL setup.
-
 OSX: Standard keyboard shortcuts like command + Q need to be re-enabled somehow.
 
 Desktop: Support all mouse buttons and mouse wheel.
