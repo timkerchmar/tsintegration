@@ -96,6 +96,7 @@ void TSThread::start()
 		0,                      // use default creation flags 
 		NULL);// might need to put handle here instead
 #else
-	pthread_create(&handle, NULL, TSThreadMethod, this);
+    pthread_create(&handle, NULL, TSThreadMethod, this);
+    pthread_detach(handle);
 #endif
 }
